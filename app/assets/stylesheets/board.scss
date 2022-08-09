@@ -1,0 +1,6 @@
+.board-wrap {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 50px;
+  height: 500px;
+}

@@ -1,0 +1,15 @@
+<div>
+  <h1>Organizations</h1>
+  <% @organizations.map do |org| %>
+    <table style="display: flex">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+      </tr>
+      <tr>
+        <td><%= org.id %></td>
+        <td><%= org.name %></td>
+      </tr>
+    </table>
+<% end %>
+</div>

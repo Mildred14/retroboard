@@ -1,0 +1,23 @@
+<h3 class="text-center"><%= @board.name %></h3>
+<div class="board-wrap">
+  <div class="card">
+    <h4>Went Well</h4>
+    <% @messages.select { |m| m.category == 'good' }.each do |m| %>
+    <p><%= m.content %></p>
+    <% end %>
+  </div>
+  <div class="card">
+    <h4>To Improve</h4>
+    <% @messages.select { |m| m.category == 'improve' }.each do |m| %>
+      <p><%= m.content %></p>
+    <% end %>
+  </div>
+  <div class="card">
+    <h4>Action Items</h4>
+    <% @messages.select { |m| m.category == 'actions' }.each do |m| %>
+      <p><%= m.content %></p>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'View Board List', boards_path %>

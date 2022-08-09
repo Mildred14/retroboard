@@ -1,0 +1,18 @@
+<h1>Hello Board</h1>
+<%= form_with model: Board.new do |f|%>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create Board" %>
+  </div>
+<% end %>
+ 
+<%= link_to 'View Board List', boards_path %>
+

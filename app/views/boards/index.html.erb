@@ -1,0 +1,21 @@
+<div>
+  <h1>Board List</h1>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">Go</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @boards.map do |board| %>
+      <tr>
+        <td><%= board.id %></td>
+        <td><%= board.name %></td>
+        <td><%= link_to 'Go', board_path(board.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

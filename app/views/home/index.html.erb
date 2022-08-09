@@ -1,0 +1,12 @@
+<h1>Welcome to your Retro Board</h1>
+<div>
+  <% if current_user %>
+    <p><%= current_user.email %></p>
+    <%= link_to 'Create Board', new_board_path %>
+    <%= button_to 'Sign out', destroy_user_session_path, method: :delete  %>
+  <% else %>
+    <%= link_to 'Sign up', new_user_registration_path %>
+    </br>
+    <%= link_to 'Sign in', new_user_session_path %>
+  <%end %>
+</div>
