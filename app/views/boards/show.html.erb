@@ -3,8 +3,10 @@
   <div class="card">
     <h4>Went Well</h4>
     <% @messages.select { |m| m.category == 'good' }.each do |m| %>
-    <p><%= m.content %></p>
+      <p><%= m.content %></p>
+      <%= link_to 'edit', edit_board_message_path(m.board_id, m.id) %>
     <% end %>
+    <%= turbo_frame_tag "new_message", src: new_board_message_path(@board.id), target: "_top" %>
   </div>
   <div class="card">
     <h4>To Improve</h4>

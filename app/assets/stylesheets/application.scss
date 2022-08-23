@@ -1,2 +1,7 @@
 @import 'bootstrap/scss/bootstrap';
 @import "board";
+
+turbo-frame {
+  display: block;
+  border: 1px solid blue;
+}

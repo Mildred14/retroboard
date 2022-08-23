@@ -1,7 +1,6 @@
-<div class="container" style="margin: 30px">
-  <p><%= @message.errors.full_messages.to_sentence %></p>
+<%= turbo_frame_tag "new_message", target: "_top" do %>
+  <p>Hola from New</p>
   <%= form_with model: [@board, @message] do |f| %>
-
     <div class="field">
       <%= f.text_area :content, placeholder: 'new message' %>
     </div>
@@ -13,4 +12,4 @@
       <%= f.submit %>
     </div>
   <% end %>
-</div>
+<% end %>

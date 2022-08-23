@@ -1,16 +1,4 @@
 <div class="container" style="margin: 30px">
 <!--  <p><%#= @message.errors.full_messages.to_sentence %></p>-->
-  <%= form_with model: @message, url: [@board, @message] do |f| %>
-
-    <div class="field">
-      <%= f.text_area :content, placeholder: 'new message' %>
-    </div>
-
-    <div class="field">
-      <%= f.select :category, [['Good', 'good'], ['Improve', 'improve'], ['Actions', 'actions']], include_blank: false %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
+  <%= render 'form', locals: { message: @message, board: @board } %>
 </div>
