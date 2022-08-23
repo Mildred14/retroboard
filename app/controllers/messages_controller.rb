@@ -8,7 +8,9 @@ class MessagesController < ApplicationController
     @message = @board.messages.new(message_params)
     @message.author = current_user
     if @message.save
-      redirect_to @board
+       respond_to do |format|
+        format.html { redirect_to(@board) }
+       end
     else
       render :new
     end
