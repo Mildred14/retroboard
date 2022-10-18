@@ -2,5 +2,34 @@
   display: grid;
   grid-template-columns: auto auto auto;
   grid-column-gap: 50px;
-  height: 500px;
+  height: calc(100% - 180px);
+}
+
+.card-category {
+  margin-bottom: 15px;
+  border: 1px solid #232323;
+  padding: 10px;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+}
+
+.board-name {
+  margin-bottom: 20px;
+}
+
+.wrap-new-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-new-board {
+  height: 300px;
+  width: 300px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
 }

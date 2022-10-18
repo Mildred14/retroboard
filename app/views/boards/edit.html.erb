@@ -1,0 +1,14 @@
+<%= turbo_frame_tag dom_id(@board) do %>
+  <%= form_with model: @board, url: [@board] do |f| %>
+    <div class="field">
+      <%= f.text_field :name, placeholder: 'new name' %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+<% end %>
+
+<%# end %>
+
+

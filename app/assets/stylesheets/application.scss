@@ -1,7 +1,11 @@
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap";
 @import "board";
+@import "nav";
+@import "welcome";
+@import "devise";
+@import "shared";
+@import "message";
 
-turbo-frame {
-  display: block;
-  border: 1px solid blue;
+body {
+  height: 100vh;
 }

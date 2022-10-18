@@ -1,0 +1,40 @@
+.welcome {
+  display: grid;
+  justify-content: center;
+  height: calc(100% - 60px);
+}
+
+.cta-btn {
+  border: 1.5px solid #232323;
+  border-radius: 3px;
+  background: none;
+  padding: 5px 15px;
+  text-decoration: none;
+  color: #232323;
+  margin-right: 15px;
+  &:hover, &:focus {
+    background: #232323;
+    color: #DADADA;
+  }
+}
+
+.cta-link {
+  background: none;
+  text-decoration: none;
+  color: #232323;
+  border: none;
+  text-decoration: underline #232323;
+  &:hover, &:focus {
+    color: #232323;
+  }
+}
+
+.wrap-btn {
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  align-items: end;
+  padding-bottom: 25px;
+}

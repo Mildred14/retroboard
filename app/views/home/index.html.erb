@@ -1,12 +1,12 @@
-<h1>Welcome to your Retro Board</h1>
-<div>
+<div class="welcome">
   <% if current_user %>
-    <p><%= current_user.email %></p>
-    <%= link_to 'Create Board', new_board_path %>
-    <%= button_to 'Sign out', destroy_user_session_path, method: :delete  %>
-  <% else %>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    </br>
-    <%= link_to 'Sign in', new_user_session_path %>
+    <div class="title">
+      <h1>Welcome @</h1>
+      <h1><%= user_name(current_user.email) %></h1>
+    </div>
+    <div class="wrap-btn">
+    <%= link_to 'Create Board', new_board_path, class: "cta-btn" %>
+    <%= link_to 'Board list', boards_path, class: "cta-link" %>
+    </div>
   <%end %>
 </div>

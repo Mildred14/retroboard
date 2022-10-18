@@ -1,0 +1,62 @@
+// ==== FONT =====
+.font-12 {
+  font-size: 12px;
+}
+// ==== MARGIN =====
+
+.mr-15 {
+  margin-right: 15px;
+}
+
+.bottom-15 {
+  bottom: 15px;
+}
+
+.w-300 {
+  width: 300px;
+}
+
+.h-70 {
+  height: 70px;
+}
+// ==== CLASSES =====
+
+.input-gray {
+  background: #f2f2f2;
+  border: none;
+  border-radius: 15px;
+  padding: 0 15px;
+  height: 30px;
+
+  &:focus-visible {
+    outline: 1.5px solid #232323;
+  }
+}
+
+.select-gray {
+  background: #f2f2f2;
+  border: none;
+  border-radius: 15px;
+  padding: 0 15px;
+  height: 30px;
+  width: 300px;
+  appearance: none;
+
+  &:focus-visible {
+    outline: 1.5px solid #232323;
+  }
+}
+
+.select-arrow {
+  background: url('./arrow-down.png') no-repeat right;
+  background-size: 10px;
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  left: 275px;
+}
+
+.text-area-fixed {
+  overflow: scroll;
+  resize: none;
+}

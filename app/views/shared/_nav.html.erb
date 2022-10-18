@@ -1,0 +1,14 @@
+<div class="navbar">
+  <div>
+    <%= link_to image_tag('retroicon.png', width: '80'), root_path %>
+  </div>
+  <div class="d-flex">
+    <% if current_user %>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, form_class: "cta-btn-devise-out mr-15" %>
+      <%= link_to 'Profile', root_path, class: "cta-btn-devise" %>
+  <% else %>
+      <%= link_to 'Sign up', new_user_registration_path, class: "cta-btn-devise mr-15" %>
+      <%= link_to 'Sign in', new_user_session_path, class: "cta-btn-devise" %>
+    <% end %>
+  </div>
+</div>

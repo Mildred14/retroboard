@@ -1,12 +1,9 @@
-<%= form_with model: @message, url: [@board, @message] do |f| %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: 'new message' %>
-  </div>
-
-  <div class="field">
-    <%= f.select :category, [['Good', 'good'], ['Improve', 'improve'], ['Actions', 'actions']], include_blank: false %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<% frame_id = dom_id(@message, "content_turbo_frame") %>
+<%= turbo_frame_tag frame_id, class: 'contents' do %>
+  <%= form_with model: @message, url: [@board, @message] do |f| %>
+    <%= f.text_area :content, placeholder: 'new message', class: 'input-gray w-300 text-area-fixed mt-4' %>
+    <div class="actions">
+      <%= f.submit 'Update', class: "cta-btn w-300" %>
+    </div>
+  <% end %>
 <% end %>

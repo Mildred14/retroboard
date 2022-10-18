@@ -4,9 +4,10 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">name</th>
-      <th scope="col">Go</th>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">GO</th>
+      <th scope="col">DELETE</th>
     </tr>
   </thead>
   <tbody>
@@ -14,8 +15,12 @@
       <tr>
         <td><%= board.id %></td>
         <td><%= board.name %></td>
-        <td><%= link_to 'Go', board_path(board.id) %></td>
+        <td><%= link_to 'GO', board_path(board.id), class: 'cta-link' %></td>
+        <td><%= button_to 'DELETE', board_path(board), method: 'delete', class: 'cta-link' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<div class="mt-5">
+  <%= link_to 'Create Board', new_board_path, class: "cta-btn" %>
+</div>

@@ -1,25 +1,50 @@
-<h3 class="text-center"><%= @board.name %></h3>
+<h3 class="text-center board-name"><%= @board.name %></h3>
 <div class="board-wrap">
-  <div class="card">
+  <div class="card card-category position-relative">
     <h4>Went Well</h4>
-    <% @messages.select { |m| m.category == 'good' }.each do |m| %>
-      <p><%= m.content %></p>
-      <%= link_to 'edit', edit_board_message_path(m.board_id, m.id) %>
+    <% @messages&.select { |m| m.category == 'good' }.each do |m| %>
+        <div class="message">
+          <% frame_id = dom_id(m, "content_turbo_frame") %>
+          <%= form_with model: m, url: [@board, @message], class: 'message-content', data: { turbo_frame: frame_id } do |form| %>
+            <%= turbo_frame_tag frame_id do %>
+              <p class="mt-4 mb-0"><%= m.content %></p>
+              <%= link_to 'edit', edit_board_message_path(m.board_id, m.id), class: 'message-edit', data: { turbo_frame: frame_id } %>
+            <% end %>
+          <% end %>
+        </div>
     <% end %>
-    <%= turbo_frame_tag "new_message", src: new_board_message_path(@board.id), target: "_top" %>
+    <%= link_to 'Add comment', new_board_message_path(@board.id), class: 'cta-link position-absolute bottom-15' %>
   </div>
-  <div class="card">
+  <div class="card card-category position-relative">
     <h4>To Improve</h4>
-    <% @messages.select { |m| m.category == 'improve' }.each do |m| %>
-      <p><%= m.content %></p>
+    <% @messages&.select { |m| m.category == 'improve' }.each do |m| %>
+      <div class="message">
+        <% frame_id = dom_id(m, "content_turbo_frame") %>
+        <%= form_with model: m, url: [@board, @message], class: 'message-content', data: { turbo_frame: frame_id } do |form| %>
+          <%= turbo_frame_tag frame_id do %>
+            <p class="mt-4 mb-0"><%= m.content %></p>
+            <%= link_to 'edit', edit_board_message_path(m.board_id, m.id) %>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
+    <%= link_to 'Add comment', new_board_message_path(@board.id), class: 'cta-link position-absolute bottom-15' %>
   </div>
-  <div class="card">
+  <div class="card card-category position-relative">
     <h4>Action Items</h4>
-    <% @messages.select { |m| m.category == 'actions' }.each do |m| %>
-      <p><%= m.content %></p>
+    <% @messages&.select { |m| m.category == 'actions' }.each do |m| %>
+      <div class="message">
+        <% frame_id = dom_id(m, "content_turbo_frame") %>
+        <%= form_with model: m, url: [@board, @message], class: 'message-content', data: { turbo_frame: frame_id } do |form| %>
+          <%= turbo_frame_tag frame_id do %>
+            <p class="mt-4 mb-0"><%= m.content %></p>
+            <%= link_to 'edit', edit_board_message_path(m.board_id, m.id) %>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
+    <%= link_to 'Add comment', new_board_message_path(@board.id), class: 'cta-link position-absolute bottom-15' %>
   </div>
 </div>
 
-<%= link_to 'View Board List', boards_path %>
+<%= link_to 'View Board List', boards_path, class: 'cta-link' %>

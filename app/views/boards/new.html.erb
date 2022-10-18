@@ -1,18 +1,18 @@
-<h1>Hello Board</h1>
-<%= form_with model: Board.new do |f|%>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
-  </div>
+<div class="wrap-new-board">
+  <h1 class="text-center">CREATE A NEW BOARD 🙌🏽</h1>
+  <div class="form-new-board">
+    <%= form_with model: Board.new do |f|%>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true, class: 'w-100 input-gray' %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Create Board" %>
+      <div class="actions mt-4">
+        <%= f.submit "Create Board", class: "cta-btn w-100" %>
+      </div>
+    <% end %>
+
+    <%= link_to 'View Board List', boards_path, class: "cta-link w-100 mt-2 text-center" %>
   </div>
-<% end %>
- 
-<%= link_to 'View Board List', boards_path %>
+</div>
 
